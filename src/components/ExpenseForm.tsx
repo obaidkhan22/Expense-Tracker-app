@@ -1,16 +1,24 @@
+import { useForm } from "react-hook-form";
 import "./ExpenseTracker.css";
 
 const ExpenseForm = () => {
+  const { register, reset, handleSubmit } = useForm();
   return (
     <div className="wrapper">
       <div className="form">
         <h1>Expense Tracker</h1>
-        <form onSubmit={() => console.log("Form submitted.")}>
+        <form
+          onSubmit={handleSubmit((data) => {
+            console.log(data);
+            reset();
+          })}
+        >
           <div className="mb-3">
             <label htmlFor="description" className="form-label">
               Description
             </label>
             <input
+              {...register("description")}
               type="text"
               className="form-control"
               id="description"
@@ -22,6 +30,7 @@ const ExpenseForm = () => {
               Amount
             </label>
             <input
+              {...register("amount")}
               type="number"
               min={3}
               max={200}
@@ -33,7 +42,11 @@ const ExpenseForm = () => {
             <label htmlFor="category" className="form-label">
               Category
             </label>
-            <select name="category" id="category" className="form-select">
+            <select
+              {...register("category")}
+              id="category"
+              className="form-select"
+            >
               <option value=""></option>
               <option value="groceries">Groceries</option>
               <option value="utilities">Utilities</option>
