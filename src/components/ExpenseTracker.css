@@ -1,4 +1,4 @@
-.wrapper {
+/* .wrapper {
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -7,4 +7,12 @@
 .form {
   width: 50vw;
   padding: 20px;
+} */
+
+.expense-tracker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
 }

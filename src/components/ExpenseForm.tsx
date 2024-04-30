@@ -4,7 +4,11 @@ import { z } from "zod";
 import { categories } from "../categories";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-const categoriesValues = ["gorceries", "utilities", "entertainment"] as const;
+export const categoriesValues = [
+  "Gorceries",
+  "Utilities",
+  "Entertainment",
+] as const;
 
 const schema = z.object({
   description: z
@@ -25,7 +29,7 @@ const ExpenseForm = () => {
     resolver: zodResolver(schema),
   });
   return (
-    <div className="wrapper">
+    <div className="wrapper w-50 mb-5">
       <div className="form">
         <h1>Expense Tracker</h1>
         <form
