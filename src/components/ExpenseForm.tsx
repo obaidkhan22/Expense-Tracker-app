@@ -18,14 +18,18 @@ const schema = z.object({
   category: z.enum(categoriesValues, { message: "Category is required." }),
 });
 
-type FormData = z.infer<typeof schema>;
-const ExpenseForm = () => {
+type ExpenseFormData = z.infer<typeof schema>;
+
+interface Props {
+  onAdd: (expense: ExpenseFormData) => void;
+}
+const ExpenseForm = ({ onAdd }: Props) => {
   const {
     register,
     reset,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>({
+  } = useForm<ExpenseFormData>({
     resolver: zodResolver(schema),
   });
   return (
@@ -34,7 +38,7 @@ const ExpenseForm = () => {
         <h1>Expense Tracker</h1>
         <form
           onSubmit={handleSubmit((data) => {
-            console.log(data);
+            onAdd(data);
             reset();
           })}
         >

@@ -2,8 +2,10 @@ import Expense from "./entities/Expense";
 
 interface Props {
   expenses: Expense[];
+  onDelete: (expenseId: number) => void;
 }
-const ExpenseTable = ({ expenses }: Props) => {
+const ExpenseTable = ({ expenses, onDelete }: Props) => {
+  if (expenses.length === 0) return null;
   return (
     <table className="table w-50">
       <thead>
@@ -16,12 +18,17 @@ const ExpenseTable = ({ expenses }: Props) => {
       </thead>
       <tbody>
         {expenses.map((expense) => (
-          <tr key={expense.category}>
+          <tr key={expense.id}>
             <td>{expense.description}</td>
             <td>${expense.amount}</td>
             <td>{expense.category}</td>
             <td>
-              <button className="btn btn-outline-danger">Delete</button>
+              <button
+                className="btn btn-outline-danger"
+                onClick={() => onDelete(expense.id)}
+              >
+                Delete
+              </button>
             </td>
           </tr>
         ))}

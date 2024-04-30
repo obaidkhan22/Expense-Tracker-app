@@ -1,5 +1,5 @@
 export const categories = [
-  { value: "groceries", label: "Groceries" },
-  { value: "utilities", label: "Utilities" },
-  { value: "entertainment", label: "Entertainment" },
+  { value: "Groceries", label: "Groceries" },
+  { value: "Utilities", label: "Utilities" },
+  { value: "Entertainment", label: "Entertainment" },
 ];
