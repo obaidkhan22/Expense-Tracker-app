@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form {
+  width: 50vw;
+  padding: 20px;
+}
