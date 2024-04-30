@@ -5,7 +5,7 @@ import { categories } from "../categories";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 export const categoriesValues = [
-  "Gorceries",
+  "Groceries",
   "Utilities",
   "Entertainment",
 ] as const;
