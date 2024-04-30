@@ -35,7 +35,7 @@ const ExpenseForm = ({ onAdd }: Props) => {
   return (
     <div className="wrapper w-50 mb-5">
       <div className="form">
-        <h1>Expense Tracker</h1>
+        <h1 className="text-center mb-3">Expense Tracker</h1>
         <form
           onSubmit={handleSubmit((data) => {
             onAdd(data);
@@ -92,8 +92,8 @@ const ExpenseForm = ({ onAdd }: Props) => {
               <p className="text-danger">{errors.category.message}</p>
             )}
           </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
+          <button type="submit" className="btn btn-primary px-4">
+            Add Expense
           </button>
         </form>
       </div>

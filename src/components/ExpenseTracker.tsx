@@ -7,9 +7,14 @@ const ExpenseTracker = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [expenses, setExpenses] = useState([
     { id: 1, description: "Milk", amount: 3, category: "Groceries" },
-    { id: 2, description: "Milk", amount: 3, category: "Utilities" },
-    { id: 3, description: "Milk", amount: 3, category: "Entertainment" },
-    { id: 4, description: "Milk", amount: 3, category: "Utilities" },
+    {
+      id: 5,
+      description: "Movie Ticket",
+      amount: 20,
+      category: "Entertainment",
+    },
+    { id: 3, description: "Pepsi", amount: 7, category: "Groceries" },
+    { id: 4, description: "Pencil", amount: 2, category: "Utilities" },
   ]);
 
   const filteredExpenses = selectedCategory
